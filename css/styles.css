@@ -1,0 +1,282 @@
+/* Import Rubik font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+
+/* CSS default browser margin/padding reset */
+* {
+  box-sizing: border-box; /* element width = content width + padding + border. */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1E1E2A;
+  font-family: Rubik, sans-serif;
+  background-image: url("C:/Users/W10/Google Drive/Back Up/Escritorio/Solidity/Web Development Proyects/Launch Countdown Timer Main/images/bg-stars.svg");
+  overflow-x: hidden;
+}
+h1, a {
+  color: #C7C6CC;
+}
+a {
+  text-decoration: none;
+}
+p {
+  color: #70708F;
+}
+li {
+  list-style-type: none;
+}
+span {
+  font-size: 0.625rem;
+  width: 90%; /* it's like a padding left and right */
+}
+
+.container {
+  height: 70vh; /* 70vh container + 30 vh footer = 100 vh = one pager website */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* flex-direction: column; implies that justify-content: center; align flex childs vertically. */
+  align-items: center; /* flex-direction: column; implies that align-items: center; align flex childs horizontally. */
+  text-align: center; /* for small width devices is required to see the timer on the middle */
+}
+
+.title-section h1 { /* 216 - 391px */
+  margin-bottom: 5rem;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+@media (max-width: 215px) {
+  .title-section h1 {
+    font-size: 0.9rem;
+    width: 95%;
+    margin-left: 0.3rem; /* litte adjustment in order to center title (overflow x was hiden) */
+    text-align: center;
+  }
+}
+@media (min-width: 391px) {
+  .title-section h1 {
+    font-size: 1.1875rem;
+  }
+}
+@media (min-width: 561px) {
+  .title-section h1 {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 761px) {
+  .title-section h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 961px) {
+  .title-section h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.timer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timer-section-time-digit::before {
+  content: "";
+  height: 0.625rem;
+  width: 0.625rem;
+  background-color: #1E1E2A;
+  border-radius: 50%;
+  position: absolute; /* relative to it's parent element with position absolute. No parent element with position absolute, so positioned relative to the body. We get the element out of the
+  HTML normal flow, and we can overlap divs. */
+  left: -0.3125rem;
+}
+
+.timer-section-time-digit::after {
+  content: "";
+  height: 0.625rem;
+  width: 0.625rem;
+  background-color: #1E1E2A;
+  border-radius: 50%;
+  position: absolute;
+  right: -0.3125rem;
+}
+
+.timer-section-time-digit {
+  height: 3.75rem;
+  width: 3.75rem;
+  background-image: linear-gradient(#2c2e42 50%, #34364f 50%); /* default value of linear-gradient is to bottom (which is what I need, so we can omit it).
+  First color is darker and seconds is lighter, in order to make that "falling in the middle effect". 50% after the first color and 50% after the seconds color make that color change in the
+  middle */
+  margin: 0 0.625rem 0.625rem;
+  border-radius: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 391px) {
+  .timer-section-time-digit {
+    height: 4.375rem;
+    width: 4.375rem;
+  }
+}
+@media (min-width: 561px) {
+  .timer-section-time-digit {
+    height: 6.25rem;
+    width: 6.25rem;
+  }
+}
+@media (min-width: 761px) {
+  .timer-section-time-digit {
+    height: 8.4375rem;
+    width: 8.4375rem;
+    margin: 0 0.9375rem 0.9375rem;
+  }
+}
+@media (min-width: 961px) {
+  .timer-section-time-digit {
+    height: 11.5625rem;
+    width: 11.5625rem;
+    margin: 0 1.25rem 1.25rem;
+  }
+}
+
+.timer-section-time-digit p {
+  color: hsl(345, 95%, 68%); /* #d4516f */
+  font-size: 1.875rem;
+}
+@media (min-width: 391px) {
+  .timer-section-time-digit p {
+    font-size: 2.1875rem;
+  }
+}
+@media (min-width: 561px) {
+  .timer-section-time-digit p {
+    font-size: 3.125rem;
+  }
+}
+@media (min-width: 761px) {
+  .timer-section-time-digit p {
+    font-size: 4.375rem;
+  }
+}
+@media (min-width: 961px) {
+  .timer-section-time-digit p {
+    font-size: 6.5625rem;
+  }
+}
+
+.timer-section-time-label p {
+  font-size: 0.625rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.625rem;
+}
+@media (min-width: 391px) {
+  .timer-section-time-label p {
+    font-size: 0.78125rem;
+  }
+}
+@media (min-width: 561px) {
+  .timer-section-time-label p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 761px) {
+  .timer-section-time-label p {
+    font-size: 1.4375rem;
+  }
+}
+@media (min-width: 961px) {
+  .timer-section-time-label p {
+    font-size: 1.875rem;
+  }
+}
+
+.footer {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #70708F;
+  text-align: center; /* if text-align is not centered, in low width devices aligned is left. */
+  background-image: url("C:/Users/W10/Google Drive/Back Up/Escritorio/Solidity/Web Development Proyects/Launch Countdown Timer Main/images/pattern-hills.svg");
+  background-size: 100% 100%;
+}
+
+.footer-social_icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-social_icons li {
+  padding: 1.5625rem 1.25rem;
+}
+@media (max-width: 215px) {
+  .footer-social_icons li {
+    padding: 1.5625rem 0.875rem;
+  }
+}
+
+.footer-social_icons img {
+  height: 1.125rem;
+  width: 1.125rem;
+}
+@media (min-width: 321px) {
+  .footer-social_icons img {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
+@media (min-width: 391px) {
+  .footer-social_icons img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+@media (min-width: 561px) {
+  .footer-social_icons img {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}
+@media (min-width: 961px) {
+  .footer-social_icons img {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
+}
+
+.footer-social_icons img:hover {
+  cursor: pointer;
+  filter: invert(49%) sepia(72%) saturate(2331%) hue-rotate(314deg) brightness(87%) contrast(90%); /* filter is somewhat new, and not compatible with some browsers (ie, for example)
+  but, according to caniuse.com, the incompatibility is less than 95%. Also, you can use this codepen: https://codepen.io/sosuke/pen/Pjoqqp to match the desired hex color with the filter
+  value to apply */
+}
+
+span a:hover {
+  color: #d4516f; /* when you hover over the link, default cursor is pointer. */
+}
+@media (max-width: 215px) {
+  span {
+    font-size: 0.5625rem;
+  }
+}
+@media (min-width: 391px) {
+  span {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 561px) {
+  span {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 961px) {
+  span {
+    font-size: 1rem;
+  }
+}
