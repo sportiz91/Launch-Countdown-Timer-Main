@@ -11,7 +11,7 @@
 body {
   background-color: #1E1E2A;
   font-family: Rubik, sans-serif;
-  background-image: url("C:/Users/W10/Google Drive/Back Up/Escritorio/Solidity/Web Development Proyects/Launch Countdown Timer Main/images/bg-stars.svg");
+  background-image: url("/images/bg-stars.svg");
   overflow-x: hidden;
 }
 h1, a {
@@ -203,7 +203,7 @@ span {
   align-items: center;
   color: #70708F;
   text-align: center; /* if text-align is not centered, in low width devices aligned is left. */
-  background-image: url("C:/Users/W10/Google Drive/Back Up/Escritorio/Solidity/Web Development Proyects/Launch Countdown Timer Main/images/pattern-hills.svg");
+  background-image: url("/images/pattern-hills.svg");
   background-size: 100% 100%;
 }
 
